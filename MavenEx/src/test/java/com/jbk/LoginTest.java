@@ -1,5 +1,6 @@
 package com.jbk;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -40,5 +41,14 @@ public void teardown () {
 		Assert.assertEquals(driver.getTitle(), "JavaByKiran | Dashboard");
 		
 	}
-
+public void IncorrectID () {
+	
+	LoginPage LL = new LoginPage (driver);
+	LL.IncorrectUName();
+	
+	String	Emailerror = driver.findElement(By.id("email_error")).getText();
+	
+	Assert.assertEquals(Emailerror, "Please enter email as kiran@gmail.com");
+	
+}
 }
