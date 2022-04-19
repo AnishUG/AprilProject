@@ -33,9 +33,9 @@ public void teardown () {
 	driver.close();
 }
 	
-	@Test (priority=2)
+	@Test (priority=4)
 	
-	public void LoginTestCases () {
+	public void BothCorrect () {
 		
 		LoginPage LP = new LoginPage (driver);
 		LP.LoginToApplication();
@@ -59,5 +59,31 @@ public void teardown () {
 	driver.navigate().refresh();
 		
 	}
+	
+	@Test (priority=2)
+	
+	public void PasswordValidationTestCases () {
+		
+		LoginPage LP = new LoginPage(driver);
+		LP.IncorrectPassword();
+		
+      String  Password = driver.findElement(By.id("password_error")).getText();
+      Assert.assertEquals(Password, "Please enter password 123456");
+      
+      driver.navigate().refresh();
+	}
+	
+@Test (priority=3)
+	
+	public void BothIncorrect () {
+	
+	LoginPage LP = new LoginPage(driver);
+	LP.BothInvalid();
+	
+	Assert.assertEquals(driver.getTitle(), "JavaByKiran | Log in");
+	
+	driver.navigate().refresh();
+}
+	
 
 }

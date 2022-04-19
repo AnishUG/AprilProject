@@ -40,4 +40,18 @@ public class LoginPage {
 		password.sendKeys("54454");
 		button.click();
 	}
+	
+	public void IncorrectPassword () {
+		
+		email.sendKeys("kiran@gmail.com");
+		password.sendKeys("67676767");
+		button.click();
+	}
+	
+	public void BothInvalid() {
+		email.sendKeys("Andy@gmail.com");
+		password.sendKeys("46556565");
+		button.click();
+		
+	}
 }
