@@ -35,12 +35,9 @@ public class LoginPage {
 		button.click();
 	}
 	
-	
-	public void IncorrectUName () {
-		email.sendKeys("anish@gmail.com");
-		password.sendKeys("123456");
+	public void IncorrectUsername () {
+		email.sendKeys("anish@test.com");
+		password.sendKeys("54454");
 		button.click();
-		
 	}
-
 }

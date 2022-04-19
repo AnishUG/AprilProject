@@ -1,5 +1,6 @@
 package com.jbk;
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,6 +25,7 @@ public class LoginTest {
 	
 	driver.get("file:///E:/Automation%20testing/Class%20video%20link/Offline%20website/javabykiran-Selenium-Softwares/javabykiran-Selenium-Softwares/Offline%20Website/index.html");
 	}
+	
 @AfterClass
 
 public void teardown () {
@@ -31,7 +33,7 @@ public void teardown () {
 	driver.close();
 }
 	
-	@Test
+	@Test (priority=2)
 	
 	public void LoginTestCases () {
 		
@@ -41,14 +43,21 @@ public void teardown () {
 		Assert.assertEquals(driver.getTitle(), "JavaByKiran | Dashboard");
 		
 	}
-public void IncorrectID () {
 	
-	LoginPage LL = new LoginPage (driver);
-	LL.IncorrectUName();
+	@Test (priority=1)
 	
-	String	Emailerror = driver.findElement(By.id("email_error")).getText();
+	public void EmailValidationTestCases () {
+		
+		LoginPage LP = new LoginPage (driver);
+		
+		LP.IncorrectUsername();
+		
+	String	Emailerror =  driver.findElement(By.id("email_error")).getText();
 	
 	Assert.assertEquals(Emailerror, "Please enter email as kiran@gmail.com");
 	
-}
+	driver.navigate().refresh();
+		
+	}
+
 }
