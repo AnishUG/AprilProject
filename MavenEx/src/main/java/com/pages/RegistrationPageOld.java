@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class RegistrationPage {
+public class RegistrationPageOld {
 	
 	WebDriver driver;
 	
@@ -24,17 +24,24 @@ public class RegistrationPage {
 	@FindBy (xpath="//button")
 	public WebElement button;
 	
-	public RegistrationPage(WebDriver driver) {
+	
+	public RegistrationPageOld(WebDriver driver) {
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void createuser () {
+
+	
+
+
+	public void creatinguser () {
 		
-		name.sendKeys("Anish");
-		mobile.sendKeys("8676767");
-		email.sendKeys("Andy@gmail.com");
-		password.sendKeys("64vv7");
+		name.sendKeys("anjh");
+		mobile.sendKeys("87767677");
+		email.sendKeys("ahjhj@Test.com");
+		password.sendKeys("87656767");
 		button.click();
+		
 	}
 
 }

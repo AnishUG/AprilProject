@@ -1,18 +1,21 @@
 package com.jbk;
 
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import com.pages.RegistrationPage;
 
-public class RegistrationTest {
+import com.pages.RegistrationPageOld;
+
+public class RegistrationTestOld {
 	
 	WebDriver driver;
 	
 	@Test
 	
-	public void Regtestcases () {
+	public void CreateUser () {
 		
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		
@@ -20,10 +23,12 @@ public class RegistrationTest {
 		
 		driver.get("file:///E:/Automation%20testing/Class%20video%20link/Offline%20website/javabykiran-Selenium-Softwares/javabykiran-Selenium-Softwares/Offline%20Website/pages/examples/register.html");
 		
-		RegistrationPage RP = new RegistrationPage (driver);
+		RegistrationPageOld RR = new RegistrationPageOld (driver);
 		
-		RP.createuser();
+		RR.creatinguser();
 		
+//	Alert alert =	driver.switchTo().alert();
+//	alert.accept();
 		
 		
 	}
